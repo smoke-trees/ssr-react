@@ -1,4 +1,6 @@
 # Logs
+public/
+src/static/views/pages/
 logs
 *.log
 npm-debug.log*
@@ -102,3 +104,6 @@ dist
 
 # TernJS port file
 .tern-port
+
+.idea/
+src/public/
