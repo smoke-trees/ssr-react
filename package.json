@@ -1,29 +1,14 @@
 {
-  "name": "forum",
-  "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
     "webpack": "webpack -d",
-    "dev": "nodemon --exec 'npm run webpack &&  COMPILER_ENV=server babel-node src/server.js'",
+    "dev": "nodemon -e css,js,jsx,ejs,cjs,ts,json,mjs script.js",
     "webpack-production": "NODE_ENV=production webpack -p",
-    "babel-production": "NODE_ENV=production COMPILER_ENV=server babel --out-dir dist src",
+    "babel-production": "NODE_ENV=production COMPILER_ENV=server babel --out-dir dist --config-file ./.babelrc.server.json src",
     "start": "node dist/server.js",
     "build": "npm run webpack-production && npm run babel-production"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/smoke-trees/forum.git"
-  },
-  "keywords": [
-    "forum",
-    "smoketrees"
-  ],
   "author": "smoketrees",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/smoke-trees/forum/issues"
-  },
   "nodemonConfig": {
     "ignore": [
       "src/static/**/*"
@@ -38,6 +23,7 @@
     "@babel/polyfill": "^7.8.3",
     "@babel/preset-env": "^7.8.4",
     "@babel/preset-react": "^7.8.3",
+    "@babel/register": "^7.9.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-file-loader": "^2.0.0",
     "babel-plugin-transform-require-ignore": "^0.1.1",
@@ -52,7 +38,6 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
-    "body-parser": "^1.19.0",
     "compression": "^1.7.4",
     "ejs": "^3.0.1",
     "express": "^4.17.1",

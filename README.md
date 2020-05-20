@@ -1,8 +1,7 @@
-# Smoke -h
+# SSR React
 
 ##### Commands to run 
 
-`$ npm run webpack`
-
-`$ npm run dev`
-
+```shell
+$ npm run dev
+```

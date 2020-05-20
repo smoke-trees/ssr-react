@@ -3,7 +3,7 @@ RUN apk add python make gcc g++
 WORKDIR /app
 COPY package* ./
 RUN npm ci
-COPY .babelrc.js .babelrc.js
+COPY .babelrc.* ./
 COPY webpack.config.js webpack.config.js
 COPY src/ src/
 RUN npm run build
