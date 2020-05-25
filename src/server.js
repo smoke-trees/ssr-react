@@ -1,6 +1,7 @@
 import express from 'express'
 import compression from 'compression'
 import index from './routes/index'
+import about from './routes/about'
 import path from 'path'
 
 // Server var
@@ -16,9 +17,10 @@ app.use('/public', express.static(path.join(__dirname, 'static', 'public')))
 
 // Routes
 app.use('/', index)
+app.use('/about', about)
 
 const port = process.env.PORT || 3000
 
-app.listen(port, function listenHandler () {
+app.listen(port, function listenHandler() {
   console.info(`Running on ${port}`)
 })

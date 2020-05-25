@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const production = process.env.NODE_ENV === 'production'
 
-const pages = ['index']
+const pages = ['index', 'about']
 
 const generateEntryPoints = (entry) => {
   return entry.reduce((obj, item) => {
